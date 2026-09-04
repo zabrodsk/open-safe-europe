@@ -1,18 +1,21 @@
 @font-face {
-  font-family: "DM Sans";
+  font-family: "Noto Sans";
   src: url("../public/fonts/NotoSans-Regular.ttf");
+  font-display: swap;
 }
 @font-face {
-  font-family: Manrope;
-  src: url("../public/fonts/NotoSans-Regular.ttf");
+  font-family: "Bricolage Grotesque";
+  src: url("../public/fonts/BricolageGrotesque.ttf");
+  font-weight: 200 800;
+  font-display: swap;
 }
 :root {
-  --paper: #f7f8f3;
-  --ink: #183d31;
-  --muted: #607067;
-  --line: #dbe2d9;
-  --lime: #d5f478;
-  --green: #255b43;
+  --paper: #eef0f8;
+  --ink: #18233f;
+  --muted: #5e6880;
+  --line: #d6dbea;
+  --lime: #cfd6fb;
+  --green: #3554df;
 }
 * {
   box-sizing: border-box;
@@ -26,7 +29,7 @@ body {
   background: var(--paper);
   color: var(--ink);
   font:
-    16px/1.6 "DM Sans",
+    16px/1.6 "Noto Sans",
     sans-serif;
 }
 a {
@@ -57,7 +60,7 @@ button:disabled {
   opacity: 0.5;
 }
 :focus-visible {
-  outline: 3px solid #699900;
+  outline: 3px solid #3554df;
   outline-offset: 4px;
 }
 .wrap {
@@ -69,7 +72,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: #f7f8f3f5;
+  background: #eef0f8f5;
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(10px);
 }
@@ -81,7 +84,7 @@ nav {
   gap: 28px;
 }
 .brand {
-  font-family: Manrope, sans-serif;
+  font-family: "Bricolage Grotesque", sans-serif;
   font-size: 21px;
   font-weight: 800;
   text-decoration: none;
@@ -117,8 +120,8 @@ nav {
   gap: 20px;
   padding: 13px 22px;
   border-radius: 7px;
-  background: var(--ink);
-  border: 1px solid var(--ink);
+  background: var(--green);
+  border: 1px solid var(--green);
   color: white;
   font-size: 14px;
   font-weight: 600;
@@ -128,13 +131,13 @@ nav {
     background 0.15s;
 }
 .btn:hover {
-  background: #2e5c48;
+  background: #2942b6;
   transform: translateY(-1px);
 }
 .btn.secondary {
   background: transparent;
   color: var(--ink);
-  border-color: #c4cec4;
+  border-color: #b9c2db;
 }
 .btn.light {
   background: var(--lime);
@@ -153,7 +156,7 @@ nav {
 .dot {
   height: 7px;
   width: 7px;
-  background: #659844;
+  background: #3554df;
   border-radius: 50%;
 }
 .hero {
@@ -166,7 +169,7 @@ nav {
 h1,
 h2,
 h3 {
-  font-family: Manrope, sans-serif;
+  font-family: "Bricolage Grotesque", sans-serif;
   line-height: 1.12;
   letter-spacing: -1.5px;
 }
@@ -177,7 +180,7 @@ h1 {
 }
 h1 em {
   font-style: normal;
-  color: #638a55;
+  color: #3554df;
 }
 h2 {
   font-size: 39px;
@@ -212,8 +215,8 @@ h3 {
   position: relative;
   min-height: 398px;
   border-radius: 18px;
-  background: #e8edde;
-  background-image: radial-gradient(#b8c8b3 1px, transparent 1px);
+  background: #cfd6fb;
+  background-image: radial-gradient(#b9c2db 1px, transparent 1px);
   background-size: 17px 17px;
   display: grid;
   place-items: center;
@@ -222,9 +225,9 @@ h3 {
 .doc {
   width: 100%;
   max-width: 330px;
-  background: #fffefa;
-  border: 1px solid #d6ddcd;
-  box-shadow: 0 14px 35px #21402d12;
+  background: #ffffff;
+  border: 1px solid #d6dbea;
+  box-shadow: 0 14px 35px #18233f12;
   border-radius: 8px;
   padding: 27px;
   transform: rotate(-3deg);
@@ -248,7 +251,7 @@ h3 {
   justify-content: space-between;
   padding: 12px 0;
   font-size: 12px;
-  border-bottom: 1px solid #eef0e9;
+  border-bottom: 1px solid #eef0f8;
 }
 .doc-row span {
   color: var(--muted);
@@ -270,7 +273,7 @@ h3 {
   color: white;
   padding: 13px 20px;
   border-radius: 8px;
-  box-shadow: 0 8px 22px #19352a18;
+  box-shadow: 0 8px 22px #18233f18;
   font-size: 12px;
   transform: rotate(2deg);
 }
@@ -322,7 +325,7 @@ section {
 .panel {
   border: 1px solid var(--line);
   border-radius: 12px;
-  background: #fffefa;
+  background: #ffffff;
   padding: 28px;
 }
 label {
@@ -334,7 +337,7 @@ label {
 input,
 select {
   width: 100%;
-  border: 1px solid #cdd6cb;
+  border: 1px solid #b9c2db;
   border-radius: 6px;
   background: white;
   padding: 12px;
@@ -345,21 +348,21 @@ select {
   cursor: pointer;
 }
 .country-panel {
-  background: #edf1e5;
+  background: #e3e8fc;
 }
 .tag {
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 1px;
   padding: 5px 8px;
-  background: #dce8ce;
+  background: #cfd6fb;
   border-radius: 4px;
   display: inline-block;
   margin-bottom: 19px;
 }
 .country-panel p {
   font-size: 14px;
-  color: #506452;
+  color: #5e6880;
   margin: 8px 0 20px;
 }
 .country-panel a {
@@ -373,12 +376,12 @@ select {
   margin-top: 35px;
 }
 .step {
-  border-top: 1px solid #cbd6c6;
+  border-top: 1px solid #d6dbea;
   padding-top: 22px;
 }
 .step-number {
-  font: 12px "DM Sans";
-  color: #70806d;
+  font: 12px "Noto Sans";
+  color: #5e6880;
   margin-bottom: 22px;
 }
 .step p {
@@ -393,7 +396,7 @@ select {
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 12px;
-  background: #fffefa;
+  background: #ffffff;
 }
 .calc-form {
   padding: 34px;
@@ -415,10 +418,10 @@ select {
   justify-content: center;
 }
 .calc-result .eyebrow {
-  color: #becdc2;
+  color: #cfd6fb;
 }
 .big {
-  font-family: Manrope;
+  font-family: "Bricolage Grotesque";
   font-size: 67px;
   letter-spacing: -3px;
   line-height: 1.1;
@@ -426,7 +429,7 @@ select {
 }
 .ownership {
   height: 11px;
-  background: #4f6d5c;
+  background: #5e6880;
   border-radius: 4px;
   overflow: hidden;
   display: flex;
@@ -441,11 +444,11 @@ select {
   display: flex;
   justify-content: space-between;
   font-size: 11px;
-  color: #d3ded5;
+  color: #e3e8fc;
 }
 .result-note {
   font-size: 12px;
-  color: #c5d4c8;
+  color: #e3e8fc;
   margin: 24px 0 0;
 }
 .error {
@@ -520,7 +523,7 @@ details p {
 }
 .cta {
   margin: 65px 0;
-  background: #e9efdf;
+  background: #e3e8fc;
   border-radius: 12px;
   padding: 45px;
   display: flex;
@@ -566,7 +569,7 @@ dialog {
   max-height: 90vh;
 }
 dialog::backdrop {
-  background: #0c261eb3;
+  background: #18233fb3;
   backdrop-filter: blur(4px);
 }
 .modal-head {
@@ -588,8 +591,8 @@ dialog::backdrop {
   padding: 0 8px;
 }
 .notice {
-  background: #e9efdf;
-  border: 1px solid #d3dfc9;
+  background: #e3e8fc;
+  border: 1px solid #cfd6fb;
   border-radius: 7px;
   padding: 14px;
   font-size: 12px;
@@ -795,5 +798,262 @@ dialog::backdrop {
   .mark {
     width: 26px;
     height: 26px;
+  }
+}
+
+/* Agreement-folder identity. Shared structure stays above. */
+.brand {
+  gap: 8px;
+  letter-spacing: -0.8px;
+}
+.mark {
+  border-radius: 6px 6px 2px 2px;
+  background: var(--green);
+  color: white;
+  font:
+    700 21px "Bricolage Grotesque",
+    sans-serif;
+}
+.hero {
+  grid-template-columns: 1.1fr 1fr;
+  gap: 58px;
+  padding: 80px 0 70px;
+  align-items: center;
+}
+.hero h1 {
+  font-size: clamp(52px, 5.8vw, 78px);
+  line-height: 1.01;
+  letter-spacing: -3.5px;
+  font-weight: 600;
+}
+.hero h1 em {
+  display: block;
+}
+.hero p {
+  max-width: 430px;
+  line-height: 1.75;
+}
+.hero .micro {
+  max-width: 400px;
+}
+.visual {
+  background: var(--lime);
+  background-image: none;
+  border-radius: 0 18px 18px 18px;
+  padding: 24px 25px 18px;
+  margin-top: 52px;
+  display: block;
+  min-height: 0;
+}
+.folder-tab {
+  position: absolute;
+  height: 53px;
+  top: -52px;
+  left: 0;
+  background: var(--lime);
+  padding: 14px 28px;
+  border-radius: 16px 18px 0 0;
+  font:
+    600 16px "Bricolage Grotesque",
+    sans-serif;
+  letter-spacing: -0.3px;
+}
+.folder-tab span {
+  margin-left: 35px;
+  font:
+    11px ui-monospace,
+    monospace;
+  color: var(--muted);
+}
+.doc {
+  max-width: none;
+  border-radius: 3px;
+  padding: 27px;
+  transform: none;
+  border: none;
+  box-shadow: 0 8px 16px #18233f0d;
+}
+.doc-top {
+  font:
+    9px ui-monospace,
+    monospace;
+  letter-spacing: 0.4px;
+  padding-bottom: 18px;
+}
+.doc h3 {
+  font-size: 92px;
+  line-height: 1;
+  letter-spacing: -5px;
+  color: var(--green);
+  font-weight: 650;
+  margin: 20px 0 0;
+}
+.doc .document-name {
+  font-size: 13px;
+  max-width: 220px;
+  line-height: 1.4;
+  color: var(--ink);
+  margin: 8px 0 23px;
+}
+.doc-row {
+  padding: 14px 0;
+  font-size: 12px;
+  gap: 12px;
+}
+.doc-row b {
+  font-variant-numeric: tabular-nums;
+}
+.doc-foot {
+  font:
+    10px ui-monospace,
+    monospace;
+  color: var(--muted);
+  gap: 10px;
+  margin-top: 25px;
+}
+.folder-caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 15px;
+  font:
+    10px ui-monospace,
+    monospace;
+}
+.strip {
+  font-size: 12px;
+  padding: 23px 0;
+}
+.strip i {
+  font-weight: 700;
+}
+h2 {
+  font-weight: 550;
+  font-size: 41px;
+  letter-spacing: -1.7px;
+}
+.eyebrow {
+  font:
+    11px ui-monospace,
+    monospace;
+  letter-spacing: 1px;
+}
+section {
+  padding: 74px 0;
+}
+.panel,
+.calculator {
+  border-radius: 10px;
+}
+.country-panel {
+  background: #e3e8fc;
+}
+.tag {
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 11px;
+  color: #2942b6;
+  background: #cfd6fb;
+}
+.step-number {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #cfd6fb;
+  color: #18233f;
+  display: grid;
+  place-items: center;
+}
+.calc-result {
+  background: var(--green);
+}
+.big {
+  font-weight: 550;
+}
+.ownership {
+  background: #ffffff30;
+}
+.cta {
+  background: var(--lime);
+  border-radius: 10px;
+}
+.agent-section {
+  padding: 68px 0;
+}
+.agent-section h2 {
+  max-width: 560px;
+}
+.agent-section > p {
+  max-width: 640px;
+  color: var(--muted);
+}
+.install-command {
+  padding: 22px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 13px;
+}
+#resultAmount {
+  font-size: 14px;
+  color: #e3e8fc;
+}
+@media (max-width: 850px) {
+  .hero {
+    gap: 30px;
+  }
+  .hero h1 {
+    font-size: 57px;
+  }
+  .doc {
+    padding: 22px;
+  }
+  .doc h3 {
+    font-size: 80px;
+  }
+}
+@media (max-width: 640px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 40px 0 32px;
+    gap: 30px;
+  }
+  .hero h1 {
+    font-size: clamp(48px, 12vw, 68px);
+    letter-spacing: -2.5px;
+  }
+  .visual {
+    margin: 50px 0 0;
+    padding: 18px;
+  }
+  .doc h3 {
+    font-size: 84px;
+  }
+  .hero .actions {
+    gap: 9px;
+  }
+  .hero .actions .btn {
+    padding: 12px 15px;
+    font-size: 13px;
+  }
+  .strip {
+    gap: 13px;
+  }
+  h2 {
+    font-size: 34px;
+  }
+  section,
+  .agent-section {
+    padding: 46px 0;
+  }
+  .step-number {
+    margin-top: 0;
+    width: 27px;
+    height: 27px;
+  }
+  .folder-caption {
+    font-size: 9px;
   }
 }

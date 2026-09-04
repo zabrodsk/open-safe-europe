@@ -6,7 +6,7 @@
     <title>Open SAFE Europe | Draft your next raise</title>
     <meta
       name="description"
-      content="Explore local fundraising documents, model a post-money SAFE, and prepare a terms brief for your European startup."
+      content="Draft a SAFE agreement for your European startup. Understand the terms and download Word or PDF. Free, open-source, no account required."
     />
     <link rel="stylesheet" href="./src/style.css" />
   </head>
@@ -34,11 +34,10 @@
           <div class="eyebrow">
             <span class="dot"></span>Open-source fundraising software
           </div>
-          <h1>Your next chapter.<br /><em>Your first cheque.</em></h1>
+          <h1>Your first cheque.<em>Put it in writing.</em></h1>
           <p>
-            Draft your SAFE agreement, understand the terms, and download it in
-            Word or PDF. Built for European startup founders. Free and
-            open-source.
+            Turn your investment terms into an editable SAFE agreement. Made for
+            European startup founders. Download Word or PDF when you’re ready.
           </p>
           <div class="actions">
             <button class="btn" data-open>
@@ -46,18 +45,21 @@
             ><a class="btn secondary" href="#documents">Explore documents</a>
           </div>
           <p class="micro">
-            Free to use. No account. Your drafts stay on your device.
+            No account. No platform fees. The general template is not locally
+            adapted or legally reviewed.
           </p>
         </div>
         <div
           class="visual"
-          aria-label="Example fundraising terms, 250,000 euros at a 5 million euro post-money cap"
+          aria-label="Example SAFE agreement with a 250,000 euro investment and 5 million euro cap"
         >
+          <div class="folder-tab">The agreement <span>WORD / PDF</span></div>
           <div class="doc">
             <div class="doc-top">
-              <b>OPEN SAFE EUROPE</b><span>ILLUSTRATION / 01</span>
+              <b>OPEN SAFE EUROPE</b><span>GENERAL FORM</span>
             </div>
-            <h3>A little capital.<br />A lot of possibility.</h3>
+            <h3>SAFE</h3>
+            <p class="document-name">Simple agreement<br />for future equity</p>
             <div class="doc-row"><span>Investment</span><b>€250,000</b></div>
             <div class="doc-row">
               <span>Post-money cap</span><b>€5,000,000</b>
@@ -66,11 +68,12 @@
               <span>Indicative ownership</span><b>5.00%</b>
             </div>
             <div class="doc-foot">
-              <span>Before the next round</span><span>Agreement draft ↗</span>
+              <span>EXAMPLE TERMS</span><span>Editable by you</span>
             </div>
           </div>
-          <div class="floating">
-            <b>↗</b><span>Built here. Funded here.</span>
+          <div class="folder-caption">
+            <span>YOUR COMPANY → YOUR INVESTOR</span
+            ><span>Draft, then review.</span>
           </div>
         </div>
       </div>
@@ -83,8 +86,8 @@
       <section id="jurisdiction">
         <div class="section-top">
           <div>
-            <div class="eyebrow">01 / Start local</div>
-            <h2>Europe is a place.<br />Your company has a jurisdiction.</h2>
+            <div class="eyebrow">Company jurisdiction</div>
+            <h2>Start with where<br />you’re incorporated.</h2>
           </div>
           <p>
             Choose where your company is incorporated. See the source and
@@ -105,8 +108,8 @@
               <option value="OTHER">Another European country</option>
             </select>
             <p class="micro">
-              Includes EU and non-EU countries. Availability refers to linked
-              resources, not legal approval.
+              Includes EU and non-EU countries. Your choice fills in company
+              details; it does not adapt the agreement to local law.
             </p>
           </div>
           <div class="panel country-panel" aria-live="polite">
@@ -120,8 +123,8 @@
         </div>
       </section>
       <section id="how">
-        <div class="eyebrow">02 / The process</div>
-        <h2>Less guesswork before you raise.</h2>
+        <div class="eyebrow">From terms to document</div>
+        <h2>A draft in three steps.</h2>
         <div class="steps">
           <article class="step">
             <div class="step-number">01</div>
@@ -152,8 +155,8 @@
       <section id="calculator">
         <div class="section-top">
           <div>
-            <div class="eyebrow">03 / Know your numbers</div>
-            <h2>A small cheque.<br />A measurable share.</h2>
+            <div class="eyebrow">Understand the cap</div>
+            <h2>What does the<br />investment represent?</h2>
           </div>
           <p>
             Illustrate a cap-based post-money SAFE. This model does not
@@ -207,9 +210,7 @@
           <div class="calc-result" aria-live="polite">
             <div class="eyebrow">Indicative SAFE ownership</div>
             <div class="big" id="ownership">5.00%</div>
-            <div style="font-size: 14px; color: #d3ded5" id="resultAmount">
-              €250,000 at a €5,000,000 cap
-            </div>
+            <div id="resultAmount">€250,000 at a €5,000,000 cap</div>
             <div class="ownership" aria-hidden="true">
               <div id="ownershipBar" style="width: 5%"></div>
             </div>
@@ -228,7 +229,7 @@
       <section id="documents">
         <div class="section-top">
           <div>
-            <div class="eyebrow">04 / The resource library</div>
+            <div class="eyebrow">Reference documents</div>
             <h2>Start with the source.</h2>
           </div>
           <p>
@@ -360,23 +361,14 @@
           </details>
         </div>
       </section>
-      <section
-        class="wrap"
-        id="agents"
-        style="padding-top: 64px; padding-bottom: 64px"
-      >
+      <section class="agent-section" id="agents">
         <h2>Let your agent prepare the draft.</h2>
         <p>
           Use the same drafting engine from your coding assistant. Validate
           terms, edit the agreement and export Word or PDF. No API key needed.
         </p>
         <pre
-          style="
-            overflow-x: auto;
-            padding: 20px;
-            background: #edf0e8;
-            border-radius: 12px;
-          "
+          class="install-command"
         ><code>npx skills add zabrodsk/open-safe-europe --skill open-safe-europe</code></pre>
         <p>
           <a

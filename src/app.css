@@ -64,7 +64,7 @@
   align-items: start;
 }
 .form-panel {
-  background: #fffefa;
+  background: #ffffff;
   border: 1px solid var(--line);
   padding: 33px;
   border-radius: 12px;
@@ -111,7 +111,7 @@ label span {
 }
 .side-card .eyebrow {
   font-size: 10px;
-  color: #b8cdbb;
+  color: #cfd6fb;
 }
 .side-card h3 {
   margin: 19px 0 4px;
@@ -120,7 +120,7 @@ label span {
 .side-card > p {
   font-size: 13px;
   margin: 0;
-  color: #bfd1c4;
+  color: #d6dbea;
 }
 .side-card dl {
   font-size: 12px;
@@ -139,7 +139,7 @@ label span {
   overflow-wrap: anywhere;
 }
 .side-card dt {
-  color: #bfd1c4;
+  color: #d6dbea;
 }
 .side-ownership {
   margin-top: 25px;
@@ -152,17 +152,17 @@ label span {
 .side-ownership p {
   font-size: 11px;
   margin: 2px 0;
-  color: #bfd1c4;
+  color: #d6dbea;
 }
 .side-card .help {
-  color: #bfd1c4;
+  color: #d6dbea;
   font-size: 11px;
 }
 .side-card .ownership {
   margin: 17px 0;
 }
 .subtle {
-  background: #eaf0df;
+  background: #e3e8fc;
   color: var(--ink);
 }
 .subtle .eyebrow {
@@ -211,8 +211,8 @@ label span {
 }
 .source-banner {
   padding: 14px 16px;
-  background: #eff2e8;
-  border-left: 3px solid #8ca15e;
+  background: #eef0f8;
+  border-left: 3px solid #3554df;
   font-size: 12px;
   margin-bottom: 14px;
 }
@@ -242,12 +242,12 @@ label span {
 }
 textarea {
   font:
-    14px/1.7 "DM Sans",
+    14px/1.7 "Noto Sans",
     sans-serif;
-  border: 1px solid #ccd5c7;
+  border: 1px solid #b9c2db;
   background: #fff;
   width: 100%;
-  color: #243e32;
+  color: #18233f;
   border-radius: 7px;
   padding: 15px;
   resize: vertical;
@@ -397,5 +397,53 @@ textarea {
   }
   .draft-title h1 {
     font-size: 29px;
+  }
+}
+
+.draft-title h1 {
+  font-weight: 600;
+  letter-spacing: -1.8px;
+}
+.step-nav {
+  background: #e3e8fc;
+  padding: 6px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  height: auto;
+  justify-content: start;
+}
+.step-nav button {
+  border: 0;
+  border-radius: 6px;
+  flex: 1;
+  padding: 15px;
+}
+.step-nav button[aria-current] {
+  background: white;
+  color: var(--green);
+  box-shadow: 0 2px 6px #18233f0a;
+}
+.form-panel {
+  border-radius: 10px;
+}
+.side-card {
+  border-radius: 10px;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--green);
+}
+#editor {
+  font-family: "Noto Sans", sans-serif;
+  background: white;
+  border-radius: 3px;
+}
+@media (max-width: 640px) {
+  .step-nav {
+    gap: 4px;
+  }
+  .step-nav button {
+    padding: 12px 5px;
   }
 }

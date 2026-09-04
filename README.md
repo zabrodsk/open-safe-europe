@@ -75,7 +75,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md). Country-specific contributions need an e
 
 ## License
 
-Code and original general agreement: [MIT](LICENSE). Bundled Noto fonts: [SIL Open Font License 1.1](public/fonts/OFL.txt). Dependencies have their own licenses.
+Code and original general agreement: [MIT](LICENSE). Bundled Noto fonts: [SIL Open Font License 1.1](public/fonts/OFL.txt). Bricolage Grotesque: [SIL Open Font License 1.1](public/fonts/Bricolage-OFL.txt). Dependencies have their own licenses.
 
 ## Agent API and skill
 
