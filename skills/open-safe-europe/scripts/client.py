@@ -25,12 +25,15 @@ if args.action != 'schema':
         body['format'] = args.format
 request = urllib.request.Request(args.base_url.rstrip('/') + '/api/' + args.action,
     data=json.dumps(body).encode() if body is not None else None,
-    headers={'Content-Type': 'application/json'})
+    headers={'Content-Type': 'application/json', 'User-Agent': 'Open-SAFE-Europe/0.1'})
 try:
     with urllib.request.urlopen(request, timeout=60) as response:
         result = response.read()
 except urllib.error.HTTPError as error:
     print(error.read().decode(), file=sys.stderr)
+    sys.exit(1)
+except urllib.error.URLError as error:
+    print(f'Connection failed: {error.reason}. Check connectivity and your Python certificate store.', file=sys.stderr)
     sys.exit(1)
 if args.output:
     args.output.write_bytes(result)
