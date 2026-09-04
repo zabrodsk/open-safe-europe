@@ -9,18 +9,16 @@ export async function wordBlob(text) {
     AlignmentType,
     PageNumber,
   } = await import("docx");
-  const paras = text
-    .split("\n")
-    .map(
-      (line) =>
-        new Paragraph({
-          heading: /^(\d+\. |PARTIES$|SIGNATURES$|DRAFTING STATUS$)/.test(line)
-            ? HeadingLevel.HEADING_2
-            : undefined,
-          spacing: { after: 100 },
-          children: [new TextRun({ text: line, font: "Arial", size: 21 })],
-        }),
-    );
+  const paras = text.split("\n").map(
+    (line) =>
+      new Paragraph({
+        heading: /^(\d+\. |PARTIES$|SIGNATURES$|DRAFTING STATUS$)/.test(line)
+          ? HeadingLevel.HEADING_2
+          : undefined,
+        spacing: { after: 100 },
+        children: [new TextRun({ text: line, font: "Arial", size: 21 })],
+      }),
+  );
   return Packer.toBlob(
     new Document({
       creator: "Open SAFE Europe",
@@ -65,10 +63,10 @@ async function loadFont() {
   }
   return font;
 }
-export async function pdfBlob(text) {
+export async function pdfBlob(text, fontBase64) {
   const { jsPDF } = await import("jspdf");
   const doc = new jsPDF({ unit: "mm", format: "a4" });
-  doc.addFileToVFS("NotoSans.ttf", await loadFont());
+  doc.addFileToVFS("NotoSans.ttf", fontBase64 || (await loadFont()));
   doc.addFont("NotoSans.ttf", "NotoSans", "normal");
   doc.setFont("NotoSans");
   doc.setFontSize(10);

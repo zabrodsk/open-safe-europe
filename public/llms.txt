@@ -1,0 +1,13 @@
+# Open SAFE Europe
+
+Open-source drafting of SAFE agreements for European startup founders.
+The bundled template is general, not adapted to national law. No legal review or insurance assurance is claimed.
+
+- Website: https://open-safe-europe.pages.dev
+- API schema: https://open-safe-europe.pages.dev/api/schema
+- Source and API guide: https://github.com/zabrodsk/open-safe-europe
+- Agent skill: https://github.com/zabrodsk/open-safe-europe/tree/main/skills/open-safe-europe
+- Install: npx skills add zabrodsk/open-safe-europe --skill open-safe-europe
+
+POST /api/validate and /api/draft accept {"data":{...}}. POST /api/export also accepts format: txt, docx or pdf and optional edited text.
+API requests are processed by Cloudflare. Browser drafting stays local. No API key required.

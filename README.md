@@ -76,3 +76,54 @@ See [CONTRIBUTING.md](CONTRIBUTING.md). Country-specific contributions need an e
 ## License
 
 Code and original general agreement: [MIT](LICENSE). Bundled Noto fonts: [SIL Open Font License 1.1](public/fonts/OFL.txt). Dependencies have their own licenses.
+
+## Agent API and skill
+
+Install the skill in your agent project:
+
+```sh
+npx skills add zabrodsk/open-safe-europe --skill open-safe-europe
+```
+
+The skill includes a Python client. See [the skill instructions](skills/open-safe-europe/SKILL.md). No MCP server is required; agents use the HTTP API directly.
+
+- `GET /api/schema`: field types, supported countries, explicit required terms, template status.
+- `POST /api/validate`: returns `valid`, field-level `warnings`, and template status.
+- `POST /api/draft`: returns `text`, `warnings`, `source`, `status`, and indicative ownership percentage.
+- `POST /api/export`: returns a downloadable Word, PDF or text file.
+
+All POST bodies contain `data`. Export also requires `format`, one of `docx`, `pdf`, `txt`. Optional `template` uses plain text and form-key placeholders. Optional export `text` preserves user edits. Dates use YYYY-MM-DD. Numeric fields must be JSON numbers. The API rejects missing commercial terms rather than adopting the browser's sample values. Missing party details remain visible placeholders and are returned as warnings. Validate and read warnings before exporting.
+
+Example with fictional data and deliberately incomplete party details:
+
+```json
+{
+  "data": {
+    "country": "Czechia",
+    "company": "Example company",
+    "investment": 250000,
+    "cap": 5000000,
+    "currency": "EUR",
+    "discount": 0,
+    "paymentDays": 10,
+    "date": "2026-09-05",
+    "incorporated": "yes"
+  }
+}
+```
+
+```sh
+curl https://open-safe-europe.pages.dev/api/draft \
+  -H 'Content-Type: application/json' --data-binary @request.json
+python3 skills/open-safe-europe/scripts/client.py export \
+  --input request.json --format pdf --output agreement.pdf
+```
+
+The public API requires no key. It runs in Cloudflare Pages Functions without an application database or request-body logging. API requests leave the caller's device and are processed by Cloudflare. Browser drafting and downloads continue to run locally and do not call the API. Requests are limited to 256 KiB, individual fields to 4,000 characters, templates and edited text to 60,000 characters. Availability is subject to hosting limits; there is no service-level guarantee. No signatures, messages or payments are performed.
+
+Deploy from the repository root so Wrangler includes `functions/` and its configuration. For local API testing:
+
+```sh
+npm run build
+npx wrangler pages dev dist --port 8108
+```
