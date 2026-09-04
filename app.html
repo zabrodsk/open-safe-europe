@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="referrer" content="no-referrer" />
+    <title>Draft your agreement | Open SAFE Europe</title>
+    <link rel="stylesheet" href="./src/style.css" />
+    <link rel="stylesheet" href="./src/app.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="wrap" aria-label="Main navigation">
+        <a href="./" class="brand"
+          ><span class="mark" aria-hidden="true">e</span>open<span
+            style="font-weight: 400"
+            >safe</span
+          ><span class="brand-region">europe</span></a
+        >
+        <div class="app-nav">
+          <span id="saveStatus" role="status">Saved on this device</span
+          ><a
+            href="https://github.com/zabrodsk/open-safe-europe"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub ↗</a
+          >
+        </div>
+      </nav>
+    </header>
+    <main class="draft-wrap">
+      <div class="draft-title">
+        <div>
+          <div class="eyebrow">Your next raise starts here</div>
+          <h1>Make the terms yours.</h1>
+          <p>A guided SAFE draft. No account, no platform fees.</p>
+        </div>
+        <button id="newDraft" class="btn secondary">New draft</button>
+      </div>
+      <div id="resumeBanner" class="notice" hidden>
+        A saved draft is open. To start with new details, choose New draft.
+      </div>
+      <nav class="step-nav" aria-label="Drafting steps">
+        <button data-step="0" aria-current="step">
+          <span>01</span> The people</button
+        ><button data-step="1"><span>02</span> The terms</button
+        ><button data-step="2"><span>03</span> Your agreement</button>
+      </nav>
+      <div class="draft-grid">
+        <div class="draft-main">
+          <form id="draftForm" novalidate>
+            <div data-page="0" class="form-panel">
+              <div class="panel-heading">
+                <span class="eyebrow">01 / The people</span>
+                <h2>Who is making the agreement?</h2>
+                <p>
+                  Use legal names as they appear in official records. You can
+                  leave details blank while preparing your draft.
+                </p>
+              </div>
+              <div class="field-grid">
+                <div>
+                  <label for="country"
+                    >Where is your company incorporated?</label
+                  ><select id="country" name="country"></select>
+                </div>
+                <div>
+                  <label for="incorporated"
+                    >Is the company incorporated yet?</label
+                  ><select id="incorporated" name="incorporated">
+                    <option value="yes">Yes</option>
+                    <option value="no">Not yet, I'm preparing</option>
+                  </select>
+                </div>
+                <div class="full notice" id="incorporationNote" hidden>
+                  A company that does not exist cannot sign this agreement.
+                  Prepare now, then update the company and authority details
+                  after incorporation.
+                </div>
+                <div>
+                  <label for="company">Company legal name</label
+                  ><input
+                    id="company"
+                    name="company"
+                    maxlength="180"
+                    placeholder="e.g. Northstar Labs s.r.o."
+                  />
+                </div>
+                <div>
+                  <label for="entity">Legal entity type</label
+                  ><input
+                    id="entity"
+                    name="entity"
+                    maxlength="100"
+                    placeholder="e.g. s.r.o., GmbH, Ltd"
+                  />
+                </div>
+                <div>
+                  <label for="registration">Company registration number</label
+                  ><input
+                    id="registration"
+                    name="registration"
+                    maxlength="100"
+                    placeholder="From the company register"
+                  />
+                </div>
+                <div>
+                  <label for="companyEmail"
+                    >Company notice email <span>optional</span></label
+                  ><input
+                    id="companyEmail"
+                    name="companyEmail"
+                    type="email"
+                    maxlength="200"
+                    placeholder="founder@company.com"
+                  />
+                </div>
+                <div class="full">
+                  <label for="address">Registered company address</label
+                  ><input
+                    id="address"
+                    name="address"
+                    maxlength="500"
+                    placeholder="Street, city, postal code, country"
+                  />
+                </div>
+                <div>
+                  <label for="companySigner">Who signs for the company?</label
+                  ><input
+                    id="companySigner"
+                    name="companySigner"
+                    maxlength="180"
+                    placeholder="Full name"
+                  />
+                </div>
+                <div>
+                  <label for="companyTitle">Their role</label
+                  ><input
+                    id="companyTitle"
+                    name="companyTitle"
+                    maxlength="100"
+                    placeholder="Director"
+                  />
+                </div>
+              </div>
+              <h3 class="subheading">And the investor</h3>
+              <div class="field-grid">
+                <div>
+                  <label for="investor">Investor legal name</label
+                  ><input
+                    id="investor"
+                    name="investor"
+                    maxlength="180"
+                    placeholder="Person or investment entity"
+                  />
+                </div>
+                <div>
+                  <label for="investorSigner">Investor signatory</label
+                  ><input
+                    id="investorSigner"
+                    name="investorSigner"
+                    maxlength="180"
+                    placeholder="Person signing the agreement"
+                  />
+                </div>
+                <div class="full">
+                  <label for="investorAddress">Investor address</label
+                  ><input
+                    id="investorAddress"
+                    name="investorAddress"
+                    maxlength="500"
+                    placeholder="Street, city, postal code, country"
+                  />
+                </div>
+                <div class="full">
+                  <label for="investorEmail"
+                    >Investor notice email <span>optional</span></label
+                  ><input
+                    id="investorEmail"
+                    name="investorEmail"
+                    type="email"
+                    maxlength="200"
+                    placeholder="investor@example.com"
+                  />
+                </div>
+              </div>
+              <div class="form-actions">
+                <span class="micro">Your details stay in this browser.</span
+                ><button type="button" class="btn" data-next="1">
+                  Next: investment terms →
+                </button>
+              </div>
+            </div>
+            <div data-page="1" class="form-panel" hidden>
+              <div class="panel-heading">
+                <span class="eyebrow">02 / The terms</span>
+                <h2>What are you agreeing to?</h2>
+                <p>
+                  The investor puts money in now for rights to shares later. The
+                  cap and any discount determine the conversion price.
+                </p>
+              </div>
+              <div class="field-grid">
+                <div>
+                  <label for="currency">Currency</label
+                  ><select id="currency" name="currency">
+                    <option>EUR</option>
+                    <option>GBP</option>
+                    <option>CHF</option>
+                    <option>CZK</option>
+                    <option>PLN</option>
+                    <option>SEK</option>
+                    <option>NOK</option>
+                    <option>DKK</option>
+                    <option>HUF</option>
+                    <option>RON</option>
+                    <option>USD</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="investment"
+                    >How much is the investor putting in?</label
+                  ><input
+                    id="investment"
+                    name="investment"
+                    type="number"
+                    min="1"
+                    step="any"
+                    inputmode="decimal"
+                  />
+                </div>
+                <div class="full">
+                  <label for="cap">Post-money valuation cap</label
+                  ><input
+                    id="cap"
+                    name="cap"
+                    type="number"
+                    min="1"
+                    step="any"
+                    inputmode="decimal"
+                  />
+                  <p class="help">
+                    The valuation ceiling used to calculate the investor's share
+                    price. A lower cap gives the investor more shares.
+                    “Post-money” includes the converting investment.
+                  </p>
+                </div>
+                <div>
+                  <label for="discount">Discount on the next round, %</label
+                  ><input
+                    id="discount"
+                    name="discount"
+                    type="number"
+                    min="0"
+                    max="50"
+                    step="any"
+                  />
+                  <p class="help">
+                    0 means no discount. If you agree 20%, the investor pays 80%
+                    of the next round's price, unless the cap gives a lower
+                    price.
+                  </p>
+                </div>
+                <div>
+                  <label for="paymentDays"
+                    >Days to pay after both parties sign</label
+                  ><input
+                    id="paymentDays"
+                    name="paymentDays"
+                    type="number"
+                    min="1"
+                    max="90"
+                    step="1"
+                  />
+                  <p class="help">
+                    Payment instructions are exchanged outside this app.
+                  </p>
+                </div>
+                <div>
+                  <label for="date">Agreement draft date</label
+                  ><input id="date" name="date" type="date" />
+                </div>
+                <div>
+                  <label for="governingLaw">Governing law</label
+                  ><input
+                    id="governingLaw"
+                    name="governingLaw"
+                    maxlength="180"
+                    placeholder="e.g. Czech Republic"
+                  />
+                  <p class="help">
+                    The legal system the parties choose. This does not adapt the
+                    template to that law.
+                  </p>
+                </div>
+                <div class="full">
+                  <label for="court">Courts for disputes</label
+                  ><input
+                    id="court"
+                    name="court"
+                    maxlength="180"
+                    placeholder="e.g. Prague, Czech Republic"
+                  />
+                  <p class="help">
+                    Specify the agreed location. Mandatory jurisdiction rules
+                    may still apply.
+                  </p>
+                </div>
+              </div>
+              <div class="form-actions">
+                <button type="button" class="btn secondary" data-next="0">
+                  ← People</button
+                ><button type="button" class="btn" data-next="2">
+                  Review your agreement →
+                </button>
+              </div>
+            </div>
+          </form>
+          <div data-page="2" class="form-panel" hidden>
+            <div class="panel-heading">
+              <span class="eyebrow">03 / Your agreement</span>
+              <h2>A full draft. Yours to edit.</h2>
+              <p>
+                Read and edit every clause below. Exports include your edits and
+                the template's source status.
+              </p>
+            </div>
+            <div class="source-banner">
+              <strong id="sourceTitle">General SAFE · Original template</strong>
+              <p id="sourceDescription">
+                Not adapted to national law. No legal review claimed.
+              </p>
+            </div>
+            <details id="issues">
+              <summary id="issueSummary">Details to complete</summary>
+              <ul id="issueList"></ul>
+            </details>
+            <div id="staleNotice" class="notice" hidden>
+              Your company details or terms changed after you edited the text.
+              Regenerate the agreement to use the new details, or keep your
+              edits and reconcile them manually.
+            </div>
+            <div class="editor-toolbar">
+              <span id="wordCount"></span
+              ><button class="text-button" id="regenerate">
+                Regenerate from details
+              </button>
+            </div>
+            <label for="editor" class="sr-only">Agreement text</label
+            ><textarea
+              id="editor"
+              spellcheck="false"
+              aria-describedby="sourceDescription"
+            ></textarea>
+            <div class="download-row">
+              <button id="downloadWord" class="btn">Download Word ↓</button
+              ><button id="downloadPdf" class="btn secondary">
+                Download PDF ↓</button
+              ><button id="downloadText" class="text-button">Plain text</button>
+            </div>
+            <p id="exportStatus" role="status" class="status"></p>
+            <details class="advanced">
+              <summary>Bring your own template</summary>
+              <p class="help">
+                Upload a UTF-8 .txt file up to 200 KB. It replaces the current
+                agreement after confirmation. Optional fields like {{company}},
+                {{investor}}, {{investment}}, {{cap}} and {{country}} fill from
+                your details. Unknown fields stay visible.
+              </p>
+              <label for="templateFile">Plain-text template</label
+              ><input type="file" id="templateFile" accept=".txt,text/plain" />
+              <p id="templateStatus" role="status" class="status"></p>
+            </details>
+            <details class="advanced">
+              <summary>
+                Ask AI about a clause <span class="micro">optional</span>
+              </summary>
+              <p class="help">
+                Paste the clause you want help with. Only that text and your
+                request go directly to OpenAI when you press Send. Charges apply
+                to your OpenAI account. The key is held in memory only. Review
+                suggestions before using them.
+              </p>
+              <div class="field-grid">
+                <div>
+                  <label for="apiKey">Your OpenAI API key</label
+                  ><input
+                    id="apiKey"
+                    type="password"
+                    autocomplete="off"
+                    placeholder="Paste your key"
+                  /><button id="forgetKey" class="text-button">
+                    Clear key
+                  </button>
+                </div>
+                <div>
+                  <label for="aiModel"
+                    >Model available to your API account</label
+                  ><input id="aiModel" value="gpt-4.1-mini" maxlength="100" />
+                </div>
+                <div class="full">
+                  <label for="aiClause">Clause to discuss</label
+                  ><textarea
+                    id="aiClause"
+                    maxlength="20000"
+                    rows="5"
+                    placeholder="Paste a clause here"
+                  ></textarea>
+                </div>
+                <div class="full">
+                  <label for="aiInstruction"
+                    >What would you like help with?</label
+                  ><input
+                    id="aiInstruction"
+                    maxlength="1000"
+                    placeholder="e.g. Explain this in plain English"
+                  />
+                </div>
+              </div>
+              <button class="btn secondary" id="askAi">
+                Send selected text to OpenAI →
+              </button>
+              <p id="aiStatus" role="status" class="status"></p>
+              <label for="aiAnswer" class="sr-only">AI suggestion</label
+              ><textarea
+                id="aiAnswer"
+                readonly
+                rows="8"
+                placeholder="The suggestion will appear here. It never changes your agreement automatically."
+              ></textarea
+              ><button class="text-button" id="copyAi">Copy suggestion</button>
+            </details>
+          </div>
+        </div>
+        <aside class="draft-sidebar">
+          <div class="side-card">
+            <div class="eyebrow">Your raise at a glance</div>
+            <h3 id="sideCompany">Your company</h3>
+            <p id="sideCountry">Czechia</p>
+            <dl>
+              <div>
+                <dt>Investment</dt>
+                <dd id="sideInvestment">€250,000</dd>
+              </div>
+              <div>
+                <dt>Post-money cap</dt>
+                <dd id="sideCap">€5,000,000</dd>
+              </div>
+            </dl>
+            <div class="side-ownership">
+              <span id="sideOwnership">5.00%</span>
+              <p>Indicative ownership at the cap</p>
+            </div>
+            <div class="ownership" aria-hidden="true">
+              <div id="sideBar" style="width: 5%"></div>
+            </div>
+            <p class="help">
+              One SAFE, before new round money or pool increases. Discounts,
+              lower-priced rounds and other instruments can change the result.
+            </p>
+          </div>
+          <div class="side-card subtle">
+            <span class="eyebrow">Know the source</span>
+            <p id="sideSource">
+              Original general template. No country-specific adaptation or legal
+              review claimed.
+            </p>
+            <a
+              href="https://github.com/zabrodsk/open-safe-europe/blob/main/src/agreement.js"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Read the source ↗</a
+            >
+          </div>
+          <div class="local-tools">
+            <button class="text-button" id="backup">Export draft backup</button
+            ><label class="text-button file-label" for="restore"
+              >Restore a backup<input
+                id="restore"
+                type="file"
+                accept=".json,application/json"
+                hidden /></label
+            ><button class="text-button danger" id="deleteDraft">
+              Delete saved draft
+            </button>
+          </div>
+        </aside>
+      </div>
+      <p class="app-footer">
+        Independent open-source software. No affiliation with Y Combinator.
+        General drafting tools, no legal review or insurance assurance. No
+        signatures or payments are collected here.
+      </p>
+    </main>
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>

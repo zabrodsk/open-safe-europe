@@ -1,0 +1,25 @@
+{
+  "name": "open-safe-europe",
+  "version": "0.1.0",
+  "private": false,
+  "scripts": {
+    "dev": "vite",
+    "start": "vite --host 127.0.0.1 --port 8107",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 8107",
+    "test": "node --test tests/*.test.js",
+    "test:e2e": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "prettier": "^3.9.6",
+    "vite": "^8.2.2"
+  },
+  "dependencies": {
+    "docx": "^9.7.1",
+    "jspdf": "^4.2.1"
+  },
+  "type": "module",
+  "description": "Open-source SAFE agreement drafting for European startup founders.",
+  "license": "MIT"
+}

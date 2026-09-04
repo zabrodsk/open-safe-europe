@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Open SAFE Europe | Draft your next raise</title>
+    <meta
+      name="description"
+      content="Explore local fundraising documents, model a post-money SAFE, and prepare a terms brief for your European startup."
+    />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="wrap" aria-label="Main navigation">
+        <a href="#" class="brand"
+          ><span class="mark" aria-hidden="true">e</span>open<span
+            style="font-weight: 400"
+            >safe</span
+          ><span class="brand-region">europe</span></a
+        >
+        <div class="navlinks">
+          <a href="#how">How it works</a><a href="#documents">Documents</a
+          ><a href="#calculator">Calculator</a
+          ><button class="btn" data-open>
+            Draft a SAFE <span aria-hidden="true">↗</span>
+          </button>
+        </div>
+      </nav>
+    </header>
+    <main class="wrap">
+      <div class="hero">
+        <div>
+          <div class="eyebrow">
+            <span class="dot"></span>Open-source fundraising software
+          </div>
+          <h1>Your next chapter.<br /><em>Your first cheque.</em></h1>
+          <p>
+            Draft your SAFE agreement, understand the terms, and download it in
+            Word or PDF. Built for European startup founders. Free and
+            open-source.
+          </p>
+          <div class="actions">
+            <button class="btn" data-open>
+              Draft your SAFE <span aria-hidden="true">↗</span></button
+            ><a class="btn secondary" href="#documents">Explore documents</a>
+          </div>
+          <p class="micro">
+            Free to use. No account. Your drafts stay on your device.
+          </p>
+        </div>
+        <div
+          class="visual"
+          aria-label="Example fundraising terms, 250,000 euros at a 5 million euro post-money cap"
+        >
+          <div class="doc">
+            <div class="doc-top">
+              <b>OPEN SAFE EUROPE</b><span>ILLUSTRATION / 01</span>
+            </div>
+            <h3>A little capital.<br />A lot of possibility.</h3>
+            <div class="doc-row"><span>Investment</span><b>€250,000</b></div>
+            <div class="doc-row">
+              <span>Post-money cap</span><b>€5,000,000</b>
+            </div>
+            <div class="doc-row">
+              <span>Indicative ownership</span><b>5.00%</b>
+            </div>
+            <div class="doc-foot">
+              <span>Before the next round</span><span>Agreement draft ↗</span>
+            </div>
+          </div>
+          <div class="floating">
+            <b>↗</b><span>Built here. Funded here.</span>
+          </div>
+        </div>
+      </div>
+      <div class="strip">
+        <span><i>✓</i> Europe-wide drafting</span
+        ><span><i>✓</i> Transparent ownership math</span
+        ><span><i>✓</i> Word and PDF exports</span
+        ><span><i>✓</i> No sign-up</span>
+      </div>
+      <section id="jurisdiction">
+        <div class="section-top">
+          <div>
+            <div class="eyebrow">01 / Start local</div>
+            <h2>Europe is a place.<br />Your company has a jurisdiction.</h2>
+          </div>
+          <p>
+            Choose where your company is incorporated. See the source and
+            local-adaptation status before drafting.
+          </p>
+        </div>
+        <div class="country-layout">
+          <div class="panel">
+            <label for="country">Company jurisdiction</label
+            ><select id="country">
+              <option value="UK">United Kingdom</option>
+              <option value="DE">Germany</option>
+              <option value="CH">Switzerland</option>
+              <option value="CZ">Czechia</option>
+              <option value="FR">France</option>
+              <option value="NL">Netherlands</option>
+              <option value="EE">Estonia</option>
+              <option value="OTHER">Another European country</option>
+            </select>
+            <p class="micro">
+              Includes EU and non-EU countries. Availability refers to linked
+              resources, not legal approval.
+            </p>
+          </div>
+          <div class="panel country-panel" aria-live="polite">
+            <span class="tag" id="countryTag"
+              >Published reference available</span
+            >
+            <h3 id="countryTitle">Advance subscription agreement</h3>
+            <p id="countryDescription"></p>
+            <a id="countryLink" target="_blank" rel="noopener noreferrer"></a>
+          </div>
+        </div>
+      </section>
+      <section id="how">
+        <div class="eyebrow">02 / The process</div>
+        <h2>Less guesswork before you raise.</h2>
+        <div class="steps">
+          <article class="step">
+            <div class="step-number">01</div>
+            <h3>Tell us about your raise</h3>
+            <p>
+              Choose your country and enter company and investor details.
+              Plain-language prompts explain each term.
+            </p>
+          </article>
+          <article class="step">
+            <div class="step-number">02</div>
+            <h3>Work through the numbers</h3>
+            <p>
+              Explore a simple post-money SAFE scenario. See how the cheque and
+              valuation cap affect ownership.
+            </p>
+          </article>
+          <article class="step">
+            <div class="step-number">03</div>
+            <h3>Download your agreement</h3>
+            <p>
+              Edit the complete draft and export it as Word or PDF. Advanced
+              users can bring their own template.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section id="calculator">
+        <div class="section-top">
+          <div>
+            <div class="eyebrow">03 / Know your numbers</div>
+            <h2>A small cheque.<br />A measurable share.</h2>
+          </div>
+          <p>
+            Illustrate a cap-based post-money SAFE. This model does not
+            calculate conversions under local ASAs or convertible loans.
+          </p>
+        </div>
+        <div class="calculator">
+          <div class="calc-form">
+            <div class="field-grid">
+              <div class="full">
+                <label for="currency">Currency</label
+                ><select id="currency">
+                  <option>EUR</option>
+                  <option>GBP</option>
+                  <option>CHF</option>
+                  <option>CZK</option>
+                </select>
+              </div>
+              <div>
+                <label for="investment">Investment amount</label
+                ><input
+                  id="investment"
+                  type="number"
+                  min="1"
+                  step="any"
+                  value="250000"
+                  inputmode="decimal"
+                />
+              </div>
+              <div>
+                <label for="cap">Post-money valuation cap</label
+                ><input
+                  id="cap"
+                  type="number"
+                  min="1"
+                  step="any"
+                  value="5000000"
+                  inputmode="decimal"
+                />
+              </div>
+            </div>
+            <p class="micro">
+              Investment ÷ post-money cap × 100.<br />One SAFE, no discount, cap
+              controls conversion.
+            </p>
+            <div id="calcError" class="error" role="status"></div>
+            <button class="btn secondary" id="useTerms">
+              Use these terms <span aria-hidden="true">↗</span>
+            </button>
+          </div>
+          <div class="calc-result" aria-live="polite">
+            <div class="eyebrow">Indicative SAFE ownership</div>
+            <div class="big" id="ownership">5.00%</div>
+            <div style="font-size: 14px; color: #d3ded5" id="resultAmount">
+              €250,000 at a €5,000,000 cap
+            </div>
+            <div class="ownership" aria-hidden="true">
+              <div id="ownershipBar" style="width: 5%"></div>
+            </div>
+            <div class="legend">
+              <span id="investorLegend">SAFE investor · 5.00%</span
+              ><span id="existingLegend">Existing holders · 95.00%</span>
+            </div>
+            <p class="result-note">
+              Before new round money or an option pool increase. A lower-priced
+              round, other instruments, and the agreement's capitalization
+              definition can change the outcome.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="documents">
+        <div class="section-top">
+          <div>
+            <div class="eyebrow">04 / The resource library</div>
+            <h2>Start with the source.</h2>
+          </div>
+          <p>
+            Documents belong to their respective publishers. Read their
+            instructions and terms of use. The bundled general SAFE is not
+            adapted to national law or legally reviewed. These external
+            documents are references, not bundled templates.
+          </p>
+        </div>
+        <div class="resource-list">
+          <article class="resource">
+            <div class="place">United Kingdom</div>
+            <div>
+              <h3>Seedcamp advance subscription agreement</h3>
+              <p>Published ASA reference · PDF · 2024</p>
+            </div>
+            <a
+              href="https://seedcamp.com/wp-content/uploads/2024/03/Seedcamp-ASA-2024-Pre-seed.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              >View source ↗</a
+            >
+          </article>
+          <article class="resource">
+            <div class="place">Germany</div>
+            <div>
+              <h3>GESSI convertible loan documents</h3>
+              <p>
+                Agreement, resolutions and calculation tool · Registration
+                required
+              </p>
+            </div>
+            <a
+              href="https://standardsinstitute.de/en/standard-documents/convertible-loan"
+              target="_blank"
+              rel="noopener noreferrer"
+              >View source ↗</a
+            >
+          </article>
+          <article class="resource">
+            <div class="place">Switzerland</div>
+            <div>
+              <h3>SECA convertible loan documents</h3>
+              <p>Model documents for Swiss startups</p>
+            </div>
+            <a
+              href="https://www.seca.ch/en/our-activities/model-documentation/convertible-loans-for-swiss-startups/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >View source ↗</a
+            >
+          </article>
+          <article class="resource">
+            <div class="place">Background</div>
+            <div>
+              <h3>Y Combinator SAFE</h3>
+              <p>Original SAFE forms and guidance · No European form listed</p>
+            </div>
+            <a
+              href="https://www.ycombinator.com/safe"
+              target="_blank"
+              rel="noopener noreferrer"
+              >View source ↗</a
+            >
+          </article>
+        </div>
+        <p class="micro">
+          Sources checked 4 September 2026. Publisher access requirements and
+          documents may change.
+        </p>
+      </section>
+      <section class="faq" id="questions">
+        <div>
+          <div class="eyebrow">A few useful answers</div>
+          <h2>Before the<br />first signature.</h2>
+        </div>
+        <div>
+          <details open>
+            <summary>Is this one SAFE for all of Europe?</summary>
+            <p>
+              No. The app serves founders across Europe. Its bundled agreement
+              is a general template, with no national adaptation or legal review
+              claimed. Selecting a country does not make that template compliant
+              with local law. You can also upload a template of your own.
+            </p>
+          </details>
+          <details>
+            <summary>Can I send or sign an agreement here?</summary>
+            <p>
+              You can draft and edit a complete SAFE agreement, then download
+              Word and PDF files. Signatures and payments happen outside this
+              app.
+            </p>
+          </details>
+          <details>
+            <summary>Does a UK ASA qualify for SEIS?</summary>
+            <p>
+              Eligibility depends on the agreement and wider conditions. HMRC
+              expects a non-refundable subscription, no interest, restrictions
+              on variation, cancellation and assignment, and a longstop date.
+              Its general expectation for advance assurance is no more than six
+              months.
+              <a
+                href="https://www.gov.uk/hmrc-internal-manuals/venture-capital-schemes-manual/vcm33025"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Read HMRC's guidance</a
+              >.
+            </p>
+          </details>
+          <details>
+            <summary>What if my country has no document listed?</summary>
+            <p>
+              You can use the general SAFE template, clearly labelled as not
+              adapted to your country, or upload your own plain-text template.
+              The app does not claim to resolve national legal requirements.
+            </p>
+          </details>
+          <details>
+            <summary>Where do my draft details go?</summary>
+            <p>
+              Drafts are saved in this browser on your device. You can export a
+              backup or delete the saved draft. Optional AI sends the selected
+              text and your instruction directly to OpenAI only when you choose
+              to send it. Your API key stays in memory and is never saved with a
+              draft. Fonts are hosted with the app. There is no analytics or
+              account system.
+            </p>
+          </details>
+        </div>
+      </section>
+      <div class="cta">
+        <div>
+          <h2>Start with a clear set of terms.</h2>
+          <p>A complete draft for your next investor conversation.</p>
+        </div>
+        <button class="btn" data-open>
+          Draft your SAFE <span aria-hidden="true">↗</span>
+        </button>
+      </div>
+    </main>
+    <footer class="wrap">
+      <div class="footer-top">
+        <a href="#" class="brand"
+          ><span class="mark" aria-hidden="true">e</span>open<span
+            style="font-weight: 400"
+            >safe</span
+          ><span class="brand-region">europe</span></a
+        >
+        <div class="footer-links">
+          <a href="#documents">Source documents</a
+          ><a href="https://github.com/zabrodsk/open-safe-europe">GitHub ↗</a
+          ><a href="#questions">Questions & privacy</a>
+        </div>
+      </div>
+      <p class="footer-note">
+        Independent open-source project. Not affiliated with Y Combinator,
+        Seedcamp, GESSI or SECA. General information and illustrative
+        calculations, not legal or tax advice. Have qualified local counsel
+        prepare and review any investment agreement.
+      </p>
+    </footer>
+    <script type="module" src="./src/landing.js"></script>
+  </body>
+</html>
