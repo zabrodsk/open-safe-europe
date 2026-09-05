@@ -49,12 +49,21 @@ countryUpdate();
 calculate();
 
 const skillUrl = "https://skills.sh/zabrodsk/open-safe-europe/open-safe-europe";
+let copyFeedbackTimer;
 $("connectAgent").addEventListener("click", async () => {
   try {
     await navigator.clipboard.writeText(skillUrl);
     $("copyStatus").textContent = "Skill link copied";
+    $("connectAgent").dataset.copied = "true";
+    clearTimeout(copyFeedbackTimer);
+    copyFeedbackTimer = setTimeout(() => {
+      delete $("connectAgent").dataset.copied;
+      $("copyStatus").textContent = "";
+    }, 2200);
     $("copyFallback").hidden = true;
   } catch {
+    clearTimeout(copyFeedbackTimer);
+    delete $("connectAgent").dataset.copied;
     $("copyStatus").textContent = "Select and copy the link below.";
     $("copyFallback").hidden = false;
     $("skillLink").focus();
