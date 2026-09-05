@@ -76,7 +76,8 @@ test("custom template upload fills only supported placeholders and renders text 
   );
   await expect(page.locator("#editor")).toHaveValue(/\{\{unknown\}\}/);
   await expect(page.locator("#sourceTitle")).toContainText("my-template.txt");
-  expect(await page.locator("img").count()).toBe(0);
+  await expect(page.locator("img:not(.brand-symbol)")).toHaveCount(0);
+  await expect(page.locator(".brand-symbol")).toHaveAttribute("src", "./logo.svg");
 });
 test("AI sends only explicitly selected text; key is not saved or backed up", async ({
   page,

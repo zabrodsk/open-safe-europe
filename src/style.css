@@ -1057,3 +1057,108 @@ section {
     font-size: 9px;
   }
 }
+
+/* Compact document mark and final spacing pass. */
+.brand {
+  gap: 9px;
+  flex-shrink: 0;
+}
+.brand-symbol {
+  display: block;
+  width: 34px;
+  height: 34px;
+}
+.brand-name {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: -0.8px;
+  white-space: nowrap;
+}
+.brand-name .brand-region {
+  align-self: auto;
+  margin: 0;
+  font:
+    10px "Noto Sans",
+    sans-serif;
+  letter-spacing: 0.1px;
+  text-transform: none;
+  color: var(--muted);
+}
+.hero .micro {
+  line-height: 1.65;
+  max-width: 390px;
+}
+.hero .actions {
+  margin-top: 26px;
+}
+.hero .document-name {
+  font-size: 13px;
+  line-height: 1.5;
+}
+.btn {
+  min-height: 46px;
+}
+.navlinks a:hover,
+.app-nav a:hover {
+  color: var(--green);
+}
+.footer-links a {
+  text-decoration-color: #b9c2db;
+}
+.footer-links a:hover {
+  text-decoration-color: currentColor;
+}
+.folder-caption {
+  line-height: 1.5;
+}
+.install-command {
+  line-height: 1.8;
+}
+@media (max-width: 640px) {
+  .brand-symbol {
+    width: 28px;
+    height: 28px;
+  }
+  .brand-name {
+    font-size: 20px;
+    gap: 5px;
+  }
+  .brand-name .brand-region {
+    font-size: 9px;
+  }
+  .hero p {
+    line-height: 1.65;
+  }
+  .hero .micro {
+    font-size: 11px;
+  }
+  .hero {
+    gap: 24px;
+  }
+  .folder-caption {
+    flex-wrap: wrap;
+  }
+  .footer-top {
+    flex-direction: column;
+  }
+  .footer-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+  }
+}
+@media (max-width: 360px) {
+  .brand-name {
+    font-size: 18px;
+  }
+  .brand-name .brand-region {
+    display: none;
+  }
+  .hero h1 {
+    font-size: 44px;
+    letter-spacing: -2px;
+  }
+}
