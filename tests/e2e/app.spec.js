@@ -62,22 +62,23 @@ test("custom template upload fills only supported placeholders and renders text 
   await page.locator("#company").fill("<img src=x onerror=alert(1)>");
   await page.locator('[data-step="2"]').click();
   page.on("dialog", (d) => d.accept());
-  await page
-    .locator("#templateFile")
-    .setInputFiles({
-      name: "my-template.txt",
-      mimeType: "text/plain",
-      buffer: Buffer.from(
-        "AGREEMENT\nCompany {{company}}\nAmount {{investment}}\n{{unknown}}",
-      ),
-    });
+  await page.locator("#templateFile").setInputFiles({
+    name: "my-template.txt",
+    mimeType: "text/plain",
+    buffer: Buffer.from(
+      "AGREEMENT\nCompany {{company}}\nAmount {{investment}}\n{{unknown}}",
+    ),
+  });
   await expect(page.locator("#editor")).toHaveValue(
     /<img src=x onerror=alert\(1\)>/,
   );
   await expect(page.locator("#editor")).toHaveValue(/\{\{unknown\}\}/);
   await expect(page.locator("#sourceTitle")).toContainText("my-template.txt");
   await expect(page.locator("img:not(.brand-symbol)")).toHaveCount(0);
-  await expect(page.locator(".brand-symbol")).toHaveAttribute("src", "./logo.svg");
+  await expect(page.locator(".brand-symbol")).toHaveAttribute(
+    "src",
+    "./logo.svg",
+  );
 });
 test("AI sends only explicitly selected text; key is not saved or backed up", async ({
   page,
@@ -167,17 +168,53 @@ test("backup restore returns edited text and strips unrecognized fields", async 
   saved.apiKey = "not-a-real-secret";
   page.on("dialog", (d) => d.accept());
   await page.locator("#newDraft").click();
-  await page
-    .locator("#restore")
-    .setInputFiles({
-      name: "backup.json",
-      mimeType: "application/json",
-      buffer: Buffer.from(JSON.stringify(saved)),
-    });
+  await page.locator("#restore").setInputFiles({
+    name: "backup.json",
+    mimeType: "application/json",
+    buffer: Buffer.from(JSON.stringify(saved)),
+  });
   await expect(page.locator("#editor")).toHaveValue(
     "Restorable edited agreement",
   );
   expect(await page.evaluate(() => JSON.stringify(localStorage))).not.toContain(
     "not-a-real-secret",
+  );
+});
+
+test("agent connection copies the skill link and offers a fallback", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await page.evaluate(() =>
+    Object.defineProperty(navigator, "clipboard", {
+      configurable: true,
+      value: {
+        writeText: async (text) => {
+          window.copiedSkill = text;
+        },
+      },
+    }),
+  );
+  await page.getByRole("button", { name: "Connect your agent" }).click();
+  await expect(page.locator("#copyStatus")).toHaveText("Skill link copied");
+  expect(await page.evaluate(() => window.copiedSkill)).toBe(
+    "https://skills.sh/zabrodsk/open-safe-europe/open-safe-europe",
+  );
+  await page.evaluate(() =>
+    Object.defineProperty(navigator, "clipboard", {
+      configurable: true,
+      value: {
+        writeText: async () => {
+          throw new Error("Permission denied");
+        },
+      },
+    }),
+  );
+  await page.getByRole("button", { name: "Connect your agent" }).click();
+  await expect(page.locator("#skillLink")).toBeVisible();
+  await expect(page.locator("#skillLink")).toBeFocused();
+  await expect(page.locator(".github-link")).toHaveAttribute(
+    "href",
+    "https://github.com/zabrodsk/open-safe-europe",
   );
 });

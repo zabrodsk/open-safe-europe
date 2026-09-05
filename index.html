@@ -27,7 +27,12 @@
           ></a
         >
         <div class="navlinks">
-          <a href="#documents">Sources</a><a href="#calculator">Calculator</a
+          <a
+            href="https://github.com/zabrodsk/open-safe-europe"
+            class="github-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub <span aria-hidden="true">↗</span></a
           ><button class="btn" data-open>Start a draft</button>
         </div>
       </nav>
@@ -40,6 +45,20 @@
           <button class="btn hero-start" data-open>
             Start a draft <span aria-hidden="true">↗</span>
           </button>
+          <div class="agent-connect">
+            <button type="button" id="connectAgent" class="connect-button">
+              Connect your agent <span aria-hidden="true">↗</span>
+            </button>
+            <span id="copyStatus" role="status" class="copy-status"></span>
+            <div id="copyFallback" hidden>
+              <label for="skillLink">Copy this skill link</label
+              ><input
+                id="skillLink"
+                readonly
+                value="https://skills.sh/zabrodsk/open-safe-europe/open-safe-europe"
+              />
+            </div>
+          </div>
         </div>
         <div class="hero-bottom">
           <span class="micro">Free to use.<br />No account required.</span>
@@ -51,42 +70,17 @@
           >
         </div>
       </div>
-      <section id="jurisdiction">
-        <div class="section-top">
-          <div>
-            <h2>Company location</h2>
-          </div>
-          <p>
-            Select your company’s country. The bundled SAFE is a general
-            template, not adapted to local law or legally reviewed.
+      <section id="jurisdiction" class="location-section">
+        <div>
+          <h2>Company location</h2>
+          <p class="section-note">
+            General SAFE template. Not locally adapted or legally reviewed.
           </p>
         </div>
-        <div class="country-layout">
-          <div class="panel">
-            <label for="country">Company jurisdiction</label
-            ><select id="country">
-              <option value="UK">United Kingdom</option>
-              <option value="DE">Germany</option>
-              <option value="CH">Switzerland</option>
-              <option value="CZ">Czechia</option>
-              <option value="FR">France</option>
-              <option value="NL">Netherlands</option>
-              <option value="EE">Estonia</option>
-              <option value="OTHER">Another European country</option>
-            </select>
-            <p class="micro">
-              Includes EU and non-EU countries. Your choice fills in company
-              details; it does not adapt the agreement to local law.
-            </p>
-          </div>
-          <div class="panel country-panel" aria-live="polite">
-            <span class="tag" id="countryTag"
-              >Published reference available</span
-            >
-            <h3 id="countryTitle">Advance subscription agreement</h3>
-            <p id="countryDescription"></p>
-            <a id="countryLink" target="_blank" rel="noopener noreferrer"></a>
-          </div>
+        <div class="location-control">
+          <label for="country">Country of incorporation</label
+          ><select id="country"></select
+          ><a id="countryLink" class="location-start"></a>
         </div>
       </section>
       <section id="calculator">
@@ -94,10 +88,6 @@
           <div>
             <h2>Ownership estimate</h2>
           </div>
-          <p>
-            Illustrate a cap-based post-money SAFE. This model does not
-            calculate conversions under local ASAs or convertible loans.
-          </p>
         </div>
         <div class="calculator">
           <div class="calc-form">
@@ -134,10 +124,7 @@
                 />
               </div>
             </div>
-            <p class="micro">
-              Investment ÷ post-money cap × 100.<br />One SAFE, no discount, cap
-              controls conversion.
-            </p>
+
             <div id="calcError" class="error" role="status"></div>
             <button class="btn secondary" id="useTerms">
               Use these terms <span aria-hidden="true">↗</span>
@@ -154,9 +141,8 @@
               ><span id="existingLegend">Existing holders · 95.00%</span>
             </div>
             <p class="result-note">
-              Before new round money or an option pool increase. A lower-priced
-              round, other instruments, and the agreement's capitalization
-              definition can change the outcome.
+              Estimate before the next round. Assumes one SAFE, no discount and
+              conversion at the cap.
             </p>
           </div>
         </div>
@@ -167,10 +153,8 @@
             <h2>Reference documents</h2>
           </div>
           <p>
-            Documents belong to their respective publishers. Read their
-            instructions and terms of use. The bundled general SAFE is not
-            adapted to national law or legally reviewed. These external
-            documents are references, not bundled templates.
+            External references, not bundled templates. Each publisher sets its
+            own terms of use.
           </p>
         </div>
         <div class="resource-list">

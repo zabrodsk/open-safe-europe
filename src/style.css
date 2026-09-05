@@ -874,3 +874,158 @@ footer.wrap {
     gap: 20px;
   }
 }
+/* Consistent controls on Safari, Chromium and Firefox. */
+select,
+.landing select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath d='m4 6 4 4 4-4' fill='none' stroke='%235c6066' stroke-width='1.4'/%3E%3C/svg%3E");
+  background-position: right 15px center;
+  background-repeat: no-repeat;
+  padding-right: 42px;
+}
+input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.landing input,
+.landing select {
+  border: 1px solid #dedede;
+  border-radius: 4px;
+  padding: 14px 16px;
+  min-height: 50px;
+  font-size: 15px;
+  box-shadow: none;
+  background-color: #fff;
+}
+.landing select {
+  padding-right: 42px;
+}
+.landing input:focus,
+.landing select:focus {
+  border-color: #555;
+  outline-offset: 3px;
+}
+.agent-connect {
+  margin: 14px auto 0;
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+}
+.connect-button {
+  border: 0;
+  background: none;
+  color: #555;
+  font-size: 12px;
+  padding: 10px 8px;
+  display: inline-flex;
+  gap: 15px;
+  align-items: center;
+}
+.connect-button:hover {
+  color: #111;
+}
+.copy-status {
+  display: block;
+  font-size: 11px;
+  min-height: 17px;
+  color: #666;
+}
+#copyFallback {
+  width: min(420px, 75vw);
+  margin-top: 12px;
+  text-align: left;
+}
+#copyFallback input {
+  font-size: 12px;
+}
+.landing .navlinks .github-link {
+  display: inline-flex;
+  gap: 9px;
+  align-items: center;
+}
+.landing .location-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8vw;
+  align-items: center;
+}
+.section-note {
+  font-size: 12px;
+  color: var(--muted);
+  max-width: 360px;
+  margin: 16px 0 0;
+  line-height: 1.6;
+}
+.location-control {
+  max-width: 460px;
+  width: 100%;
+  justify-self: end;
+}
+.location-start {
+  display: inline-block;
+  font-size: 12px;
+  margin-top: 16px;
+  text-decoration: none;
+}
+.location-start:hover {
+  text-decoration: underline;
+}
+.landing #calculator .calc-result {
+  border: 0;
+  padding: 0 0 0 30px;
+}
+.landing #calculator .big {
+  font-size: 76px;
+  letter-spacing: -4px;
+}
+.landing .calc-form .field-grid {
+  gap: 18px;
+}
+.landing #calculator label {
+  font-weight: 400;
+  color: #555;
+  font-size: 12px;
+}
+.landing .result-note {
+  max-width: 360px;
+}
+.landing #calcError:empty {
+  min-height: 0;
+  margin: 0;
+}
+.landing #useTerms {
+  margin-top: 22px;
+}
+@media (max-width: 700px) {
+  .landing .location-section {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .location-control {
+    max-width: none;
+  }
+  .landing #calculator .calc-result {
+    padding: 0;
+  }
+  .landing .navlinks {
+    gap: 16px;
+  }
+  .landing .navlinks > .btn {
+    display: none;
+  }
+  .landing .navlinks .github-link {
+    font-size: 12px;
+  }
+  .landing #calculator .big {
+    font-size: 60px;
+  }
+  .agent-connect {
+    margin-top: 10px;
+  }
+}

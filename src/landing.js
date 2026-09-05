@@ -3,12 +3,7 @@ const $ = (id) => document.getElementById(id);
 $("country").replaceChildren(...COUNTRIES.map((c) => new Option(c, c)));
 $("country").value = "Czechia";
 function countryUpdate() {
-  $("countryTag").textContent = "General template · Not locally adapted";
-  $("countryTitle").textContent =
-    `Draft for a company in ${$("country").value}`;
-  $("countryDescription").textContent =
-    "Use the original general SAFE, or bring your own template. Country selection changes company details; it does not certify the agreement under local law.";
-  $("countryLink").textContent = "Start your agreement ↗";
+  $("countryLink").textContent = "Draft for " + $("country").value + " ↗";
   $("countryLink").href =
     "./app.html?country=" + encodeURIComponent($("country").value);
   $("countryLink").removeAttribute("target");
@@ -52,3 +47,17 @@ $("country").addEventListener("change", countryUpdate);
 );
 countryUpdate();
 calculate();
+
+const skillUrl = "https://skills.sh/zabrodsk/open-safe-europe/open-safe-europe";
+$("connectAgent").addEventListener("click", async () => {
+  try {
+    await navigator.clipboard.writeText(skillUrl);
+    $("copyStatus").textContent = "Skill link copied";
+    $("copyFallback").hidden = true;
+  } catch {
+    $("copyStatus").textContent = "Select and copy the link below.";
+    $("copyFallback").hidden = false;
+    $("skillLink").focus();
+    $("skillLink").select();
+  }
+});

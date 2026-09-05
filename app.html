@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./src/style.css" />
     <link rel="stylesheet" href="./src/app.css" />
   </head>
-  <body>
+  <body class="draft-app">
     <header>
       <nav class="wrap" aria-label="Main navigation">
         <a href="./" class="brand" aria-label="Open SAFE Europe home"
@@ -49,9 +49,9 @@
       </div>
       <nav class="step-nav" aria-label="Drafting steps">
         <button data-step="0" aria-current="step">
-          <span>01</span> The people</button
-        ><button data-step="1"><span>02</span> The terms</button
-        ><button data-step="2"><span>03</span> Your agreement</button>
+          <span>01</span> Company & investor</button
+        ><button data-step="1"><span>02</span> Investment terms</button
+        ><button data-step="2"><span>03</span> Review & download</button>
       </nav>
       <div class="draft-grid">
         <div class="draft-main">
@@ -59,21 +59,19 @@
             <div data-page="0" class="form-panel">
               <div class="panel-heading">
                 <span class="eyebrow">01 / The people</span>
-                <h2>Who is making the agreement?</h2>
+                <h2>Company details</h2>
                 <p>
-                  Use legal names as they appear in official records. You can
-                  leave details blank while preparing your draft.
+                  Use registered legal names. You can complete missing details
+                  later.
                 </p>
               </div>
               <div class="field-grid">
                 <div>
-                  <label for="country"
-                    >Where is your company incorporated?</label
+                  <label for="country">Country of incorporation</label
                   ><select id="country" name="country"></select>
                 </div>
                 <div>
-                  <label for="incorporated"
-                    >Is the company incorporated yet?</label
+                  <label for="incorporated">Incorporation status</label
                   ><select id="incorporated" name="incorporated">
                     <option value="yes">Yes</option>
                     <option value="no">Not yet, I'm preparing</option>
@@ -150,7 +148,7 @@
                   />
                 </div>
               </div>
-              <h3 class="subheading">And the investor</h3>
+              <h3 class="subheading">Investor details</h3>
               <div class="field-grid">
                 <div>
                   <label for="investor">Investor legal name</label
