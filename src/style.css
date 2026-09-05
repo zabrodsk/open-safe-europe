@@ -1083,3 +1083,171 @@ input::-webkit-outer-spin-button {
 .agent-link-preview a:hover {
   text-decoration: underline;
 }
+/* Cobalt hero, inspired by the supplied visual reference. */
+.landing header {
+  background: #2948ec;
+  color: #fff;
+}
+.landing header .brand-symbol {
+  filter: brightness(0) invert(1);
+}
+.landing header .brand-region {
+  color: #dfe4ff;
+}
+.landing header nav {
+  height: 94px;
+  border-bottom: 1px solid #ffffff35;
+}
+.landing header .navlinks .github-link {
+  color: #fff;
+}
+.landing header .navlinks .btn {
+  background: #fff;
+  color: #2948ec;
+  padding: 14px 22px;
+  border-radius: 4px;
+}
+.landing .hero {
+  position: relative;
+  isolation: isolate;
+  min-height: calc(100svh - 94px);
+  padding: 64px 0 28px;
+  gap: 46px;
+  color: white;
+}
+.landing .hero::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: calc((100% - 100vw) / 2);
+  width: 100vw;
+  background: #2948ec;
+}
+.landing .hero-heading {
+  text-align: left;
+  margin: 0;
+  padding: 18px 0 0;
+}
+.landing .hero-label {
+  font:
+    11px/1.5 ui-monospace,
+    monospace;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #e0e5ff;
+  margin: 0 0 38px;
+  max-width: none;
+}
+.landing .hero h1 {
+  font-size: clamp(74px, 10.2vw, 150px);
+  font-weight: 500;
+  line-height: 0.99;
+  letter-spacing: -0.065em;
+}
+.landing .hero h1 span {
+  color: #ffc3a7;
+}
+.landing .hero-description {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #e0e5ff;
+  max-width: 530px;
+  margin: 30px 0 0;
+}
+.landing .hero-start {
+  background: #fff;
+  color: #2948ec;
+  border-color: #fff;
+  border-radius: 4px;
+  margin-top: 26px;
+  min-width: 180px;
+}
+.landing .hero-start:hover {
+  background: #eef0ff;
+}
+.landing .agent-connect {
+  margin: 12px 0 0;
+}
+.landing .agent-connect-row {
+  color: #e0e5ff;
+}
+.landing .agent-connect-row .connect-button {
+  background: transparent;
+  border-color: #ffffff65;
+  color: #fff;
+}
+.landing .agent-connect-row .connect-button:hover {
+  background: #ffffff15;
+  border-color: white;
+}
+.landing .agent-link-preview {
+  left: 0;
+  transform: none;
+}
+.landing .copy-status {
+  color: #e0e5ff;
+}
+.landing #copyFallback label {
+  color: white;
+}
+.landing .hero-bottom {
+  margin-top: 8px;
+  border-top: 1px solid #ffffff35;
+  padding-top: 22px;
+}
+.landing .hero-bottom .micro,
+.landing .hero-scroll {
+  color: #e0e5ff;
+}
+.landing .hero-bottom > p {
+  color: #e0e5ff;
+}
+.landing .hero :focus-visible,
+.landing header :focus-visible {
+  outline-color: #ffc3a7;
+}
+@media (max-width: 700px) {
+  .landing header nav {
+    height: 76px;
+  }
+  .landing .hero {
+    min-height: auto;
+    padding: 44px 0 25px;
+    gap: 35px;
+  }
+  .landing .hero-heading {
+    padding: 0;
+  }
+  .landing .hero-label {
+    font-size: 9px;
+    letter-spacing: 1px;
+    max-width: 270px;
+    margin: 0 0 30px;
+  }
+  .landing .hero h1 {
+    font-size: clamp(54px, 12.7vw, 88px);
+    letter-spacing: -0.06em;
+  }
+  .landing .hero-description {
+    font-size: 15px;
+    margin-top: 24px;
+  }
+  .landing .hero-start {
+    margin-top: 25px;
+  }
+  .landing .hero-bottom {
+    gap: 18px;
+  }
+  .landing .hero-bottom > p {
+    display: none;
+  }
+  .landing .hero-scroll {
+    grid-column: auto;
+    justify-self: end;
+  }
+  .landing .hero .agent-link-preview {
+    max-width: calc(100vw - 44px);
+  }
+}
