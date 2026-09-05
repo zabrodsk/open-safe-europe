@@ -46,9 +46,25 @@
             Start a draft <span aria-hidden="true">↗</span>
           </button>
           <div class="agent-connect">
-            <button type="button" id="connectAgent" class="connect-button">
-              Connect your agent <span aria-hidden="true">↗</span>
-            </button>
+            <div class="agent-connect-row">
+              <span>Connect your agent</span>
+              <button
+                type="button"
+                id="connectAgent"
+                class="connect-button"
+                aria-label="Copy skill link"
+              >
+                Copy
+              </button>
+              <div class="agent-link-preview">
+                <a
+                  href="https://skills.sh/zabrodsk/open-safe-europe/open-safe-europe"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >https://skills.sh/zabrodsk/open-safe-europe/open-safe-europe</a
+                >
+              </div>
+            </div>
             <span id="copyStatus" role="status" class="copy-status"></span>
             <div id="copyFallback" hidden>
               <label for="skillLink">Copy this skill link</label

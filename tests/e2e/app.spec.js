@@ -195,7 +195,12 @@ test("agent connection copies the skill link and offers a fallback", async ({
       },
     }),
   );
-  await page.getByRole("button", { name: "Connect your agent" }).click();
+  await expect(
+    page.getByRole("button", { name: "Copy skill link" }),
+  ).toBeVisible();
+  await page.locator(".agent-connect-row").hover();
+  await expect(page.locator(".agent-link-preview")).toBeVisible();
+  await page.getByRole("button", { name: "Copy skill link" }).click();
   await expect(page.locator("#copyStatus")).toHaveText("Skill link copied");
   expect(await page.evaluate(() => window.copiedSkill)).toBe(
     "https://skills.sh/zabrodsk/open-safe-europe/open-safe-europe",
@@ -210,7 +215,7 @@ test("agent connection copies the skill link and offers a fallback", async ({
       },
     }),
   );
-  await page.getByRole("button", { name: "Connect your agent" }).click();
+  await page.getByRole("button", { name: "Copy skill link" }).click();
   await expect(page.locator("#skillLink")).toBeVisible();
   await expect(page.locator("#skillLink")).toBeFocused();
   await expect(page.locator(".github-link")).toHaveAttribute(
