@@ -447,3 +447,60 @@ textarea:focus {
     padding: 12px 5px;
   }
 }
+/* Quiet drafting workspace. */
+.draft-wrap {
+  max-width: 1180px;
+}
+.draft-title h1 {
+  font-size: 34px;
+  letter-spacing: -1px;
+}
+.draft-title .eyebrow {
+  display: none;
+}
+.form-panel,
+.side-card {
+  border-radius: 6px;
+}
+.step-nav {
+  background: #f7f8fa;
+  border-radius: 6px;
+}
+.side-card {
+  background: #f7f8fa;
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+.side-card .eyebrow,
+.side-card > p,
+.side-card dt,
+.side-card .help,
+.side-ownership p {
+  color: var(--muted);
+}
+.side-card dl div {
+  border-color: var(--line);
+}
+.side-ownership span {
+  color: var(--ink);
+}
+.subtle {
+  background: white;
+}
+.source-banner {
+  background: #f7f8fa;
+  border-left-color: #aab1bd;
+}
+.panel-heading h2 {
+  font-size: 23px;
+}
+.step-nav button[aria-current] {
+  color: var(--ink);
+  box-shadow: none;
+  border: 1px solid var(--line);
+}
+@media (max-width: 730px) {
+  .draft-title h1 {
+    font-size: 27px;
+  }
+}
